@@ -14,22 +14,22 @@
 
   <h1>YouTube To MP3</h1>
   <h3>By <a href="https://makrine.github.io">Makrine</a></h3>
-  <label for="link">Enter Youtube Link:</label>
+  <label for="link" id="eneter-link">Enter Youtube Link:</label>
   <input type="text" id="link" name="link"><br>
-  <button onclick="getVideoInfo_and_downlaod()" id="download">გადმოწერე</button>
-  <button onclick="reset()" id="reset">გაასუფთავე</button>
+  <button onclick="getVideoInfo_and_downlaod()" id="download">გადმოწერა</button>
+  <button onclick="reset()" id="reset">წაშლა</button>
   <p id="title"></p>
 
   <div>
-    <button onclick="toggleAdvanced()">Advanced</button>
+    <button onclick="toggleAdvanced()" id="advanced">Advanced</button>
     <div id="advanced-features">
-        <p>I am using these APIs</p>
+        <p id="KEY_API_USE">I am using these APIs</p>
         <ul>
             <li><a href="https://rapidapi.com/ytjar/api/youtube-mp36">Youtube MP3</a></li>
             <li><a href="https://rapidapi.com/tuttotone/api/t-one-youtube-converter/">T-one youtube Converter</a></li>
         </ul>
-        <p>You can get your own API key there and enter below.</p>
-      <label for="user-api-key">Your API KEY:</label>
+        <p id="KEY_API_USE2">You can get your own API key there and enter below.</p>
+      <label for="user-api-key" id="KEY_API_USE3">Your API KEY:</label>
       <input type="text" id="user-api-key">
     </div>
   </div>
@@ -45,10 +45,11 @@
     }
   </script>
 <div class="language">
-  <label for="language-select">Language:</label>
-  <select id="language-select" name="language">
-  <option value="en">English</option>
-  <option value="ge">ქართული</option>
+  <label for="language-select" id="lang">Language:</label>
+  <select id="language-select">
+    <option value="GE">ქართული</option>
+    <option value="EN">English</option>
+  </select>
 </div>
 
 </body>
