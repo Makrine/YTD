@@ -163,3 +163,7 @@ function getVideoId(link)
     }
   }
   
+function reset()
+{
+    document.getElementById("link").value = "";
+}

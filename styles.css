@@ -6,12 +6,6 @@ body {
     text-align: center;
   }
   
-  /* Center the content */
-  .container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-  }
   
   /* Style the label and input field */
   label {
@@ -32,7 +26,7 @@ body {
   
   /* Style the button */
   button {
-    background-color: #008CBA;
+    background-color: green;
     color: white;
     padding: 10px;
     border: none;
@@ -40,6 +34,12 @@ body {
     font-size: 18px;
     cursor: pointer;
     margin-bottom: 20px;
+  }
+#download {
+    background-color: #008CBA;
+  }
+  #reset {
+    background-color: red;
   }
   
   button:hover {
@@ -63,4 +63,8 @@ body {
 
   #advanced-features {
     display: none;
+  }
+
+  li {
+    list-style-type: none;
   }
