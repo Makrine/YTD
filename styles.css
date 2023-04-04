@@ -1,5 +1,6 @@
 /* Set a nice background color */
 body {
+    margin-top: 5%;
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -59,7 +60,7 @@ body {
     margin-bottom: 20px;
   }
   
-  #result {
-    font-size: 18px;
+
+  #advanced-features {
+    display: none;
   }
-  

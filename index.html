@@ -13,7 +13,32 @@
   <input type="text" id="link" name="link">
   <button onclick="getVideoInfo_and_downlaod()">Download</button>
   <p id="title"></p>
-  <p id="result"></p>
+
+  <div>
+    <button onclick="toggleAdvanced()">Advanced</button>
+    <div id="advanced-features">
+        <p>I am using these APIs</p>
+        <ul>
+            <li><a href="https://rapidapi.com/ytjar/api/youtube-mp36">Youtube MP3</a></li>
+            <li><a href="https://rapidapi.com/tuttotone/api/t-one-youtube-converter/">T-one youtube Converter</a></li>
+        </ul>
+        <p>You can get your own API key there and enter below.</p>
+      <label for="user-api-key">Your API KEY:</label>
+      <input type="text" id="user-api-key">
+    </div>
+  </div>
+
+  <script>
+    function toggleAdvanced() {
+      var advancedFeatures = document.getElementById("advanced-features");
+      if (advancedFeatures.style.display === "none" || advancedFeatures.style.display === "") {
+        advancedFeatures.style.display = "block";
+      } else {
+        advancedFeatures.style.display = "none";
+      }
+    }
+  </script>
+
 
 </body>
 </html>

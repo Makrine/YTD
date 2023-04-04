@@ -1,4 +1,7 @@
 API_KEY = "5e89df95d3msh042ea4cb320d766p13c714jsn5d60c5ffe334"
+KEY = API_KEY
+
+var userAPIKey = false;
 
 function getVideoInfo_and_downlaod()
 {
@@ -16,21 +19,43 @@ function getVideoInfo_and_downlaod()
         return;
     }
 
+    checkUserApi();
+    document.getElementById("title").innerHTML = "Getting video info...<br>";
     
-    // var downloadLink = API_1(videoId);
-    // if(downloadLink != null)
-    // {
-    //     download(downloadLink);
-    //     return;
-    // }
 
-    downloadLink = API_2(videoId);
-    if(downloadLink != null)
+    getDownloadLink(videoId);
+
+    
+}
+
+async function getDownloadLink(videoId)
+{
+    try
     {
-        download(downloadLink);
-        return;
-    }
+        var link = await API_1(videoId);
+        if(link != null)
+        {
+            download(link);
+            return;
+        }
 
+        var link = await API_2(videoId);
+        if(link != null)
+        {
+            download(link);
+            return;
+        }
+
+        if(userAPIKey)
+            alert("Please enter a valid API key");
+        else
+            alert("Max API calls reached. Please try again later")
+    }
+    catch(error)
+    {
+        console.log(error);
+        alert("Error");
+    }
 }
 
 
@@ -42,26 +67,29 @@ function API_1(videoId)
         "url": `https://youtube-mp36.p.rapidapi.com/dl?id=${videoId}`,
         "method": "GET",
         "headers": {
-            "X-RapidAPI-Key": API_KEY,
+            "X-RapidAPI-Key": KEY,
             "X-RapidAPI-Host": "youtube-mp36.p.rapidapi.com"
         }
     };
 
 
-    $.ajax(settings)
-    .done(function (response) {
-        var title = response["title"];
-        var link = response["link"];
+    return new Promise((resolve, reject) => {
+        $.ajax(settings)
+        .done(function (response) {
+            var title = response["title"];
+            var link = response["link"];
 
-        // Find the element with id="title" and set its text to the title
-        document.getElementById("title").innerHTML = title;
+            // Find the element with id="title" and set its text to the title
+            document.getElementById("title").innerHTML += "<p style='color: green;'>" + title + "</p>";
+            document.getElementById("title").innerHTML += "<br>Downloading...<br>";
 
-        return link;
-    })
-    .fail(function (xhr, status, error) {
-        // Handle error response
-        console.log(status + ": " + error);
-        return null;
+            resolve(link);
+        })
+        .fail(function (xhr, status, error) {
+            // Handle error response
+            console.log(status + ": " + error);
+            resolve(null);
+        });
     });
 
 }
@@ -74,26 +102,28 @@ function API_2(videoId)
         "url": `https://t-one-youtube-converter.p.rapidapi.com/api/v1/createProcess?url=https%3A%2F%2Fyoutu.be%2F${videoId}&format=mp3&responseFormat=json&lang=en`,
         "method": "GET",
         "headers": {
-            "X-RapidAPI-Key": API_KEY,
+            "X-RapidAPI-Key": KEY,
             "X-RapidAPI-Host": "t-one-youtube-converter.p.rapidapi.com"
         }
     };
 
+    return new Promise((resolve, reject) => {
+        $.ajax(settings)
+        .done(function (response) {
+            var title = response["YoutubeAPI"]["titolo"];
+            var link = response["YoutubeAPI"]["urlMp3"];
 
-    $.ajax(settings)
-    .done(function (response) {
-        var title = response["YoutubeAPI"]["titolo"];
-        var link = response["file"];
+            // Find the element with id="title" and set its text to the title
+            document.getElementById("title").innerHTML += "<p style='color: green;'>" + title + "</p>";
+            document.getElementById("title").innerHTML += "<br>Downloading...<br>";
 
-        // Find the element with id="title" and set its text to the title
-        document.getElementById("title").innerHTML = title;
-
-        return link;
-    })
-    .fail(function (xhr, status, error) {
-        // Handle error response
-        console.log(status + ": " + error);
-        return null;
+            resolve(link);
+        })
+        .fail(function (xhr, status, error) {
+            // Handle error response
+            console.log(status + ": " + error);
+            resolve(null);
+        });
     });
 
 }
@@ -116,4 +146,20 @@ function getVideoId(link)
     }
   }
   
+
+  function checkUserApi()
+  {
+    // find the element with id="user-api-key" and set its text to the api key if it is not empty
+    var user_api_key = document.getElementById("user-api-key").value;
+    if(user_api_key != "")
+    {
+        userAPIKey = true;
+        KEY = user_api_key;
+    }
+    else
+    {
+        userAPIKey = false;
+        KEY = API_KEY;
+    }
+  }
   
