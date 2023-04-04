@@ -1,0 +1,9 @@
+name: YD
+
+on:
+  push:
+    branches: [ master ]
+
+env:
+  MY_SECRET: ${{ secrets.API_KEY }}
+
