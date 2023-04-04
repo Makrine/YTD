@@ -4,6 +4,8 @@ on: [push]
 jobs:
   my-job:
     runs-on: ubuntu-latest
+    env:
+      API_KEY: "my key"
     steps:
-      - name: Run Echo Command
-        run: echo "Hello, world!"
+      - name: Display my api
+        run: echo $API_KEY
