@@ -8,7 +8,11 @@ function getVideoInfo()
         return;
     }
     var videoId = getVideoId(link);
-
+    if(videoId == null)
+    {
+        alert("Please enter a valid link");
+        return;
+    }
     // regex to get id from youtube link
     var regex = /(?:v=|\/)([a-zA-Z0-9_-]{11})/;
     var id = link.match(regex)[1];
