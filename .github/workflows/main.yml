@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set My Api Key
+#     - name: Set My Api Key
 #       env:
 #         api_key: ${{ secrets.YT_API_KEY }}
     - name: print my Api key
