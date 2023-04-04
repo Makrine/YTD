@@ -20,7 +20,7 @@ function getVideoInfo_and_downlaod()
     }
 
     checkUserApi();
-    document.getElementById("title").innerHTML = "Getting video info...<br>";
+    document.getElementById("result").innerHTML = "Getting video info...<br>";
     
 
     getDownloadLink(videoId);
@@ -80,8 +80,8 @@ function API_1(videoId)
             var link = response["link"];
 
             // Find the element with id="title" and set its text to the title
-            document.getElementById("title").innerHTML += "<p style='color: green;'>" + title + "</p>";
-            document.getElementById("title").innerHTML += "<br>Downloading...<br>";
+            document.getElementById("result").innerHTML += "<p style='color: green;'>" + title + "</p>";
+            document.getElementById("result").innerHTML += "<br>Downloading...<br>";
 
             resolve(link);
         })
@@ -113,9 +113,8 @@ function API_2(videoId)
             var title = response["YoutubeAPI"]["titolo"];
             var link = response["YoutubeAPI"]["urlMp3"];
 
-            // Find the element with id="title" and set its text to the title
-            document.getElementById("title").innerHTML += "<p style='color: green;'>" + title + "</p>";
-            document.getElementById("title").innerHTML += "<br>Downloading...<br>";
+            document.getElementById("result").innerHTML += "<p style='color: green;'>" + title + "</p>";
+            document.getElementById("result").innerHTML += "<br>Downloading...<br>";
 
             resolve(link);
         })
@@ -166,5 +165,5 @@ function getVideoId(link)
 function reset()
 {
     document.getElementById("link").value = "";
-    document.getElementById("title").innerHTML = "";
+    document.getElementById("result").innerHTML = "";
 }
