@@ -13,8 +13,6 @@ function getVideoInfo()
     var regex = /(?:v=|\/)([a-zA-Z0-9_-]{11})/;
     var id = link.match(regex)[1];
 
-
-
     const settings = {
         "async": true,
         "crossDomain": true,
