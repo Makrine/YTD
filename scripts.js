@@ -22,7 +22,6 @@ function getVideoInfo_and_downlaod()
     checkUserApi();
     document.getElementById("result").innerHTML = "Getting video info...<br>";
     
-
     getDownloadLink(videoId);
 
     
