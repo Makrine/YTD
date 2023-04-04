@@ -16,7 +16,7 @@ function getVideoInfo()
         "url": `https://youtube-mp36.p.rapidapi.com/dl?id=${id}`,
         "method": "GET",
         "headers": {
-            "X-RapidAPI-Key": process.env.API_KEY,
+            "X-RapidAPI-Key": "5e89df95d3msh042ea4cb320d766p13c714jsn5d60c5ffe334",
             "X-RapidAPI-Host": "youtube-mp36.p.rapidapi.com"
         }
     };
