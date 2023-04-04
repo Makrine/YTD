@@ -1,25 +1,15 @@
-name: YD
-
+name: "Youtube Downloader"
 on:
   push:
-    branches: [ master ]
-
-  workflow_dispatch:
-  
-jobs:  
-  display:
+    branches: [master]
+jobs:
+  deploy:
     runs-on: ubuntu-latest
-    env:
-      platform: Azure
-      region: central
-      profile_path: profile/
-      MY_SECRET: ${{ secrets.API_KEY }}
 
-  steps:
-    - name: Display custom environment variables
-    run: |
-      echo "The platform is: ${{ env.platform }}"
-      echo "The platform is: $region"
-      echo "My secret: ${{ secrets.API_KEY }}"
-
+    steps:
+      - uses: actions/checkout@v2
+      - name: Environment
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: echo "My secret: ${{ secrets.API_KEY }}"
 
