@@ -8,13 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      API_KEY: ${{ secrets.YT_API_KEY }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-#     - name: Set My Api Key
-#       env:
-#         api_key: ${{ secrets.YT_API_KEY }}
     - name: print my Api key
       run: echo ${{ secrets.YT_API_KEY }}
