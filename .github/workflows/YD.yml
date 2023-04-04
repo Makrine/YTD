@@ -4,6 +4,21 @@ on:
   push:
     branches: [ master ]
 
-env:
-  MY_SECRET: ${{ secrets.API_KEY }}
+  workflow_dispatch:
+  
+  display:
+    runs-on: ubuntu-latest
+    env:
+      platform: Azure
+      region: central
+      profile_path: profile/
+      MY_SECRET: ${{ secrets.API_KEY }}
+
+  steps:
+    - name: Display custom environment variables
+    run: |
+      echo "The platform is: ${{ env.platform }}"
+      echo "The platform is: $region"
+      echo "My secret: ${{ secrets.API_KEY }}"
+
 
