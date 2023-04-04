@@ -1,3 +1,5 @@
+requestAnimationFrame('dotenv').config();
+
 function getVideoInfo()
 {
     // get the video link from the input field
