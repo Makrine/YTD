@@ -1,15 +1,9 @@
-name: "Youtube Downloader"
-on:
-  push:
-    branches: [master]
+name: "My Workflow"
+on: [push]
+
 jobs:
-  deploy:
+  my-job:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Environment
-
-        run: | 
-          echo "My secret: hello"
-
+      - name: Run Echo Command
+        run: echo "Hello, world!"
