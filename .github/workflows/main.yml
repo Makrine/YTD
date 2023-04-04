@@ -15,6 +15,6 @@ jobs:
 
     - name: Set My Api Key
       if: success()
-      uses: my-org/my-action@v1
+      uses: YouTubeDownloaderWeb@v1
       with:
         api_key: ${{ secrets.YT_API_KEY }}
