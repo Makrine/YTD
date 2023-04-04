@@ -2,6 +2,11 @@ function getVideoInfo()
 {
     // get the video link from the input field
     var link = document.getElementById("link").value;
+    if(link == "")
+    {
+        alert("Please enter a link");
+        return;
+    }
     var videoId = getVideoId(link);
 
     // regex to get id from youtube link
