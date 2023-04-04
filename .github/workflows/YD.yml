@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Environment
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-        run: echo "My secret: ${{ secrets.API_KEY }}"
+
+        run: | 
+          echo "My secret: hello"
 
