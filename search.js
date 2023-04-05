@@ -82,10 +82,24 @@ titleCell.appendChild(downloadButton);
             textField.remove();
             linkButton.style.backgroundColor = '#008CBA';
           });
+
+          const ytCell = document.createElement("div");
+          ytCell.classList.add("result-cell");
+          row.appendChild(linkCell);
+  
+          const ytBtn = document.createElement("button");
+          ytBtn.textContent = "Open in YouTube";
+          ytBtn.classList.add("link");
+          ytCell.appendChild(ytBtn);
+  
+          ytBtn.addEventListener("click", function() {
+            window.open(videoUrl, '_blank');
+          });
   
           row.appendChild(thumbnailCell);
           row.appendChild(titleCell);
           row.appendChild(linkCell);
+          row.appendChild(ytCell);
           results.appendChild(row);
         });
     }, function(error) {
