@@ -81,6 +81,9 @@ titleCell.appendChild(downloadButton);
             document.execCommand("copy");
             textField.remove();
             linkButton.style.backgroundColor = '#008CBA';
+
+            // find input field with id link and set its value to videoUrl
+            document.getElementById("link").value = videoUrl;
           });
 
           const ytCell = document.createElement("div");
