@@ -75,4 +75,5 @@ async function loadLocalizationData() {
     localize('KEY_API_USE2', 'KEY_API_USE2');
     localize('KEY_API_USE3', 'KEY_API_USE3');
     localize('search', 'KEY_SEARCH');
+    localize("search-prompt", "KEY_SEARCH_PROMPT");
   }
