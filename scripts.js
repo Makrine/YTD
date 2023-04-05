@@ -78,7 +78,7 @@ async function getDownloadLink(videoId)
     catch(error)
     {
         console.log(error);
-        alert("Error");
+        alert("Error: " + error);
     }
 }
 
