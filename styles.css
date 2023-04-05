@@ -78,7 +78,6 @@ body {
 
   /* Increase height and width of buttons */
   button {
-    height: 60px;
-    width: 120px;
+    width: 200px;
   }
 }
