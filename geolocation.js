@@ -5,13 +5,12 @@ if ("geolocation" in navigator) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     
-    console.log(`Latitude: ${latitude} °, Longitude: ${longitude} °`)
     // Call the Geocoding API to retrieve the user's country
     fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`)
       .then(response => response.json())
       .then(data => {
         const country = data.address.country;
-        console.log(`User is in ${country}`);
+
         if(country == "Georgia")
         {
             selectedLanguageCode = "GE";
