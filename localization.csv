@@ -2,7 +2,7 @@ KEY,EN,GE
 KEY_DOWNLOAD,"Download","გადმოწერა"
 KEY_RESET,"Reset","წაშლა"
 KEY_ADVANCED,"Advanced","დამატებითი"
-KEY_ENTER_LINK,"Enter Youtube Link:","ჩაწერეთ Youtube ლინკი:"
+KEY_ENTER_LINK,"Download with Youtube Link:","გადმოწერეთ Youtube ლინკი:"
 KEY_SEARCH_PROMPT,"Search Song on YouTube","ძებნა YouTube-ზე"
 KEY_LANG,"Language:","ენა:"
 KEY_API_USE,"I am using these APIs","მე ვიყენებ ამ API-ებს"
