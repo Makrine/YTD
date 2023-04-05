@@ -68,3 +68,17 @@ body {
   li {
     list-style-type: none;
   }
+
+/* For phone screens */
+@media screen and (max-width: 480px) {
+  /* Increase font size of input fields */
+  input[type="text"], button {
+    font-size: 24px;
+  }
+
+  /* Increase height and width of buttons */
+  button {
+    height: 60px;
+    width: 120px;
+  }
+}
