@@ -1,0 +1,32 @@
+#results {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .result-row {
+    display: table-row;
+  }
+  
+  .result-cell {
+    display: table-cell;
+    padding: 10px;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+  }
+  
+  .thumbnail {
+    max-width: 120px;
+    max-height: 90px;
+  }
+  
+  .title {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .id {
+    font-size: 14px;
+    color: #666;
+  }
+  

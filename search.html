@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9MTLS9QWY8"></script>
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9MTLS9QWY8');
+</script>
+    <meta charset="UTF-8">
+    <title>Youtube Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="search.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="scripts.js"></script>
+    <script src="search.js"></script>
+</head>
+<body>
+<input type="text" id="prompt">
+<button onclick="searchVideos()">Search</button>
+<p id="result"></p>
+<div id="results"></div>
+</body>
+</html>
