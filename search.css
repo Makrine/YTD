@@ -29,4 +29,10 @@
     font-size: 14px;
     color: #666;
   }
+
+  .result-cell.url {
+    width: 20%;
+    padding-right: 10px;
+  }
+  
   

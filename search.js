@@ -1,4 +1,4 @@
-API_KEY = "AIzaSyBi7F2RvjqICAyatrf9lR_gq7t4J4vaD9k"
+API_KEY_YT = "AIzaSyBi7F2RvjqICAyatrf9lR_gq7t4J4vaD9k"
 
 function searchVideos() {
     // Get the user input
@@ -14,7 +14,7 @@ function searchVideos() {
     gapi.load("client", function() {
       // Initialize the API client
       gapi.client.init({
-        apiKey: API_KEY,
+        apiKey: API_KEY_YT,
         discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"]
       }).then(function() {
         // Use the API client to search for videos
@@ -25,7 +25,7 @@ function searchVideos() {
           maxResults: 10
         });
       }).then(function(response) {
-        // Display the video thumbnails and titles in a table
+        // Display the video thumbnails, titles, and links in a table
         const results = document.getElementById("results");
         results.innerHTML = "";
         const videos = response.result.items;
@@ -55,17 +55,36 @@ function searchVideos() {
           titleButton.classList.add("title");
           titleCell.appendChild(titleButton);
   
+          const linkCell = document.createElement("div");
+          linkCell.classList.add("result-cell");
+          row.appendChild(linkCell);
+  
+          const linkButton = document.createElement("button");
+          linkButton.textContent = "Copy Link";
+          linkButton.classList.add("link");
+          linkCell.appendChild(linkButton);
+  
+          linkButton.addEventListener("click", function() {
+            const textField = document.createElement("textarea");
+            textField.innerText = videoUrl;
+            document.body.appendChild(textField);
+            textField.select();
+            document.execCommand("copy");
+            textField.remove();
+            alert("Link copied to clipboard!");
+          });
+  
           row.appendChild(thumbnailCell);
           row.appendChild(titleCell);
+          row.appendChild(linkCell);
           results.appendChild(row);
         });
-      }, function(error) {
+    }, function(error) {
         console.error("Error loading YouTube API client", error);
       });
     });
   }
   
-
   function resetSearch()
   {
         document.getElementById("prompt").value = "";

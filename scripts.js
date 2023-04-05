@@ -33,7 +33,7 @@ async function getDownloadLink(videoId)
     try
     {
         // try the first api key
-        KEY = API_KEY1;
+        KEY = API_KEY;
         var link = await API_1(videoId);
         if(link != null)
         {
