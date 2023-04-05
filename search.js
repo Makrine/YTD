@@ -44,16 +44,25 @@ function searchVideos() {
           thumbnail.src = thumbnailUrl;
           thumbnail.classList.add("thumbnail");
           thumbnailCell.appendChild(thumbnail);
-  
-          const titleCell = document.createElement("div");
-          titleCell.classList.add("result-cell");
-          const titleButton = document.createElement("button");
-          titleButton.textContent = title;
-          titleButton.onclick = function() {
-            getDownloadLink(videoId);
-          };
-          titleButton.classList.add("title");
-          titleCell.appendChild(titleButton);
+
+const titleCell = document.createElement("div");
+titleCell.classList.add("result-cell");
+
+const songTitle = document.createElement("div");
+songTitle.textContent = title;
+songTitle.classList.add("title");
+
+const downloadButton = document.createElement("button");
+downloadButton.textContent = "Download";
+downloadButton.onclick = function() {
+  getDownloadLink(videoId);
+};
+downloadButton.classList.add("download");
+
+titleCell.appendChild(songTitle);
+titleCell.appendChild(downloadButton);
+
+
   
           const linkCell = document.createElement("div");
           linkCell.classList.add("result-cell");
@@ -71,7 +80,7 @@ function searchVideos() {
             textField.select();
             document.execCommand("copy");
             textField.remove();
-            alert("Link copied to clipboard!");
+            linkButton.style.backgroundColor = '#008CBA';
           });
   
           row.appendChild(thumbnailCell);
