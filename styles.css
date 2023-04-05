@@ -35,10 +35,10 @@ body {
     cursor: pointer;
     margin-bottom: 20px;
   }
-#download {
+#download, #search {
     background-color: #008CBA;
   }
-  #reset {
+  #reset, #reset2 {
     background-color: red;
   }
   

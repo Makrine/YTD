@@ -30,6 +30,7 @@
   <p id="result"></p>
 
   <input type="text" id="prompt">
+  <br>
 <button onclick="searchVideos()" id="search">ძებნა</button>
 <button onclick="resetSearch()" id="reset">წაშლა</button>
 <div id="results"></div>
@@ -62,6 +63,15 @@
       }
     });
   </script>
+  <div class="language">
+    <label for="language-select" id="lang">Language:</label>
+    <select id="language-select">
+      <option value="GE">ქართული</option>
+      <option value="EN">English</option>
+    </select>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br>
   <div>
     <button onclick="toggleAdvanced()" id="advanced">Advanced</button>
     <div id="advanced-features">
@@ -86,13 +96,7 @@
       }
     }
   </script>
-<div class="language">
-  <label for="language-select" id="lang">Language:</label>
-  <select id="language-select">
-    <option value="GE">ქართული</option>
-    <option value="EN">English</option>
-  </select>
-</div>
+
 
 </body>
 </html>
