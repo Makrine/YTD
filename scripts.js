@@ -9,18 +9,18 @@ function getVideoInfo_and_downlaod()
     var link = document.getElementById("link").value;
     if(link == "")
     {
-        alert("Please enter a link");
+        alert(getLocalized("KEY_LINK_TERM"));
         return;
     }
     var videoId = getVideoId(link);
     if(videoId == null)
     {
-        alert("Please enter a valid link");
+        alert(getLocalized("KEY_LINK_VALID"));
         return;
     }
 
     checkUserApi();
-    document.getElementById("result").innerHTML = "Getting video info...<br>";
+   document.getElementById("result").innerHTML = getLocalized("KEY_GETTING_INFO");
     
     getDownloadLink(videoId);
 
@@ -46,9 +46,9 @@ async function getDownloadLink(videoId)
         }
 
         if(userAPIKey)
-            alert("Please enter a valid API key");
+            alert(getLocalized("KEY_API_VALID"));
         else
-            alert("Max API calls reached. Please try again later")
+            alert(getLocalized("KEY_API_MAX"))
     }
     catch(error)
     {
@@ -80,7 +80,7 @@ function API_1(videoId)
 
             // Find the element with id="title" and set its text to the title
             document.getElementById("result").innerHTML += "<p style='color: green;'>" + title + "</p>";
-            document.getElementById("result").innerHTML += "<br>Downloading...<br>";
+            document.getElementById("result").innerHTML += getLocalized("KEY_DOWNLOADING");
 
             resolve(link);
         })
@@ -113,7 +113,7 @@ function API_2(videoId)
             var link = response["YoutubeAPI"]["urlMp3"];
 
             document.getElementById("result").innerHTML += "<p style='color: green;'>" + title + "</p>";
-            document.getElementById("result").innerHTML += "<br>Downloading...<br>";
+            document.getElementById("result").innerHTML += getLocalized("KEY_DOWNLOADING");
 
             resolve(link);
         })

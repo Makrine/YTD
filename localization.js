@@ -58,14 +58,21 @@ async function loadLocalizationData() {
     item.innerHTML = localized;
   }
 
+  function getLocalized(key)
+  {
+    return getLocalizedString(key, selectedLanguageCode);
+  }
+
   function localizeAll()
   {
     localize('download', 'KEY_DOWNLOAD');
     localize('reset', 'KEY_RESET');
+    localize('reset2', 'KEY_RESET');
     localize('advanced', 'KEY_ADVANCED');
     localize('eneter-link', 'KEY_ENTER_LINK');
     localize('lang', 'KEY_LANG');
     localize('KEY_API_USE', 'KEY_API_USE');
     localize('KEY_API_USE2', 'KEY_API_USE2');
     localize('KEY_API_USE3', 'KEY_API_USE3');
+    localize('search', 'KEY_SEARCH');
   }

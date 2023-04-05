@@ -6,10 +6,10 @@ function searchVideos() {
     
     if(searchTerm == "")
     {
-        alert("Please enter a search term");
+        alert(getLocalized("KEY_SEARCH_TERM"));
         return;
     }
-    
+
     // Load the YouTube API client library
     gapi.load("client", function() {
       // Initialize the API client

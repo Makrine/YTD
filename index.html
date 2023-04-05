@@ -17,9 +17,9 @@
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
   <script src="https://apis.google.com/js/api.js"></script>
+  <script src="localization.js"></script>
   <script src="scripts.js"></script>
   <script src="papaparse.js"></script>
-  <script src="localization.js"></script>
   <script src="search.js"></script>
 </head>
 <body>
@@ -29,14 +29,14 @@
   <p id="result"></p>
 
   <input type="text" id="prompt">
-<button onclick="searchVideos()">Search</button>
+<button onclick="searchVideos()" id="search">ძებნა</button>
 <button onclick="resetSearch()" id="reset">წაშლა</button>
 <div id="results"></div>
 
   <label for="link" id="eneter-link">Enter Youtube Link:</label>
   <input type="text" id="link" name="link"><br>
   <button onclick="getVideoInfo_and_downlaod()" id="download">გადმოწერა</button>
-  <button onclick="reset()" id="reset">წაშლა</button>
+  <button onclick="reset()" id="reset2">წაშლა</button>
 
   <div>
     <button onclick="toggleAdvanced()" id="advanced">Advanced</button>
