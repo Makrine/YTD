@@ -1,4 +1,5 @@
 API_KEY = "9b08df7c87msh9c3bff502c1205dp12a726jsnde2396b1716d"
+API_KEY2 = "5e89df95d3msh042ea4cb320d766p13c714jsn5d60c5ffe334"
 KEY = API_KEY
 
 var userAPIKey = false;
@@ -31,9 +32,12 @@ async function getDownloadLink(videoId)
 {
     try
     {
+        // try the first api key
+        KEY = API_KEY1;
         var link = await API_1(videoId);
         if(link != null)
         {
+            console.log("API_1, KEY1");
             download(link);
             return;
         }
@@ -41,10 +45,31 @@ async function getDownloadLink(videoId)
         var link = await API_2(videoId);
         if(link != null)
         {
+            console.log("API_2, KEY1");
             download(link);
             return;
         }
 
+        // try the second api key
+        KEY = API_KEY2;
+        var link = await API_1(videoId);
+        if(link != null)
+        {
+            console.log("API_1, KEY2");
+            download(link);
+            return;
+        }
+
+        var link = await API_2(videoId);
+        if(link != null)
+        {
+            console.log("API_2, KEY2");
+            download(link);
+            return;
+        }
+
+
+        console.log("No API");
         if(userAPIKey)
             alert(getLocalized("KEY_API_VALID"));
         else
