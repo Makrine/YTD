@@ -14,4 +14,4 @@ KEY_LINK_VALID,"Please enter a valid link","გთხოვთ, ჩაწერ�
 KEY_API_VALID,"Please enter a valid API Key","გთხოვთ, ჩაწეროთ სწორი API Key"
 KEY_API_MAX,"Max API calls reached. Please try again later","მაქსიმალური API Calls. მოგვიანებით სცადეთ."
 KEY_GETTING_INFO,"Getting video info...<br>","ვიდეოს ინფორმაციის მიღება...<br>"
-KEY_DOWNLOADING","<br>Downloading...<br>","იტვირთება...<br>"
+KEY_DOWNLOADING,"<br>Downloading...<br>","იტვირთება...<br>"
